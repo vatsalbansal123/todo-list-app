@@ -1,9 +1,6 @@
 # TodoListApp
 
 <br>
-<center><img src="https://img.shields.io/github/repo-size/vatsalbansal123/TodoListApp?style=for-the-badge")</center>
-<br>
-<br>
 
 <p align='left'>A Simple Todo List App built using python......</p>
 <br>
