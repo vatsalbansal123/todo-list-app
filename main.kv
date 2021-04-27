@@ -1,0 +1,77 @@
+<TooltipMDFloatingActionButton@MDFloatingActionButton+MDTooltip>
+<TooltipMDTextField@MDTextField+MDTooltip>
+<TooltipMDBottomNavigationItem@MDBottomNavigationItem+MDTooltip>
+
+
+<DialogContent>
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "60dp"
+
+    MDTextField:
+        id: add_task_text
+        hint_text: "Type Your Task!"
+
+<DialogContentEdit>
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "60dp"
+
+    MDTextField:
+        id: edit_task
+        hint_text: "Type Your Task!"
+
+Screen:
+    name: 'menu'
+    MDLabel:
+        text: 'Todo List App'
+        halign: 'center'
+        pos_hint: {"center_y": 0.9}
+        font_style: "H3"
+        theme_text_color: "Custom"
+        text_color: self.theme_cls.primary_color
+
+    TooltipMDFloatingActionButton:
+        id: theme_button
+        icon: 'pencil'
+        md_bg_color: app.theme_cls.primary_color
+        pos_hint: {"center_x": 0.92, "center_y": 0.95}
+        tooltip_text: 'Change Theme!'
+        on_release: app.open_theme_dialog()
+        user_font_size: "20sp"
+
+    MDLabel:
+        id: no_task_label
+        text: 'You Do Not Have Any Active Task!'
+        font_size: 15
+        halign: 'center'
+    MDBoxLayout:
+        orientation: 'vertical'
+        spacing: dp(10)
+        padding: dp(20)
+        # adaptive_height: True
+
+        MDBoxLayout:
+            adaptive_height: True
+
+        ScrollView:
+
+            MDBoxLayout:
+                orientation: "vertical"
+                spacing: dp(10)
+                padding: dp(20)
+                id: rv
+                adaptive_height: True
+
+    TooltipMDFloatingActionButton:
+        theme_text_color: "Custom"
+        user_font_size: "32sp"
+        icon: "plus"
+        md_bg_color: app.theme_cls.primary_color
+        elevation_normal: 5
+        pos_hint: {'center_x': 0.5, "center_y": 0.1}
+        tooltip_text: 'Add A New Task!'
+        on_release: app.open_dialog()
+    
